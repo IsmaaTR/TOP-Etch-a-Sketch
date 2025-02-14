@@ -6,14 +6,29 @@ body {
     align-items: center;
     justify-content: center;
     background-color: red;
+    flex-direction: column;
 }
 
 #grid-container {
     display: flex;
     flex-direction: column;
     aspect-ratio: 1 / 1;
-    width: 700px;
-    padding: 100px;
+    width: 800px;
+    padding-top: 20px;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#change-grid {
+    margin: 20px;
+    padding: 5px 30px;
+    border-radius: 5px;
+    background-color: yellow;
+    cursor: pointer;
 }
 
 .grid-row {
