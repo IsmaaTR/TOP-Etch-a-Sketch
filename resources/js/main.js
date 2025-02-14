@@ -24,7 +24,10 @@ function createGrid(size = 16) {
     const cells = document.querySelectorAll('.grid-cell');
     cells.forEach(cell => {
         cell.addEventListener('mouseover', () => {
-            cell.classList.add('hover');
+            //Generate random color for the cell
+            const randomNumber = Math.floor(Math.random() * 0xFFFFFF);
+            const randomColor = '#' + randomNumber.toString(16).padStart(6, '0');
+            cell.style.backgroundColor = randomColor;
         });
     });
 }
