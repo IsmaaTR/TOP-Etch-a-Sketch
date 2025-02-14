@@ -1,9 +1,18 @@
+//The opacity offset
+let opacity = 0.1;
+
 //Create the 16 x 16 grid
 createGrid();
 
 //Add event listener to the change grid button
 const changeGridButton = document.querySelector('#change-grid');
 changeGridButton.addEventListener('click', changeGrid);
+
+//Add event listener to reset the opacity offset
+const gridContainer = document.querySelector('#grid-container');
+gridContainer.addEventListener('mouseleave', () => {
+    opacity = 0;
+});
 
 // Functions
 function createGrid(size = 16) {
@@ -28,6 +37,10 @@ function createGrid(size = 16) {
             const randomNumber = Math.floor(Math.random() * 0xFFFFFF);
             const randomColor = '#' + randomNumber.toString(16).padStart(6, '0');
             cell.style.backgroundColor = randomColor;
+            cell.style.opacity = opacity;
+            if (opacity < 1) {
+                opacity += 0.1;
+            }
         });
     });
 }
