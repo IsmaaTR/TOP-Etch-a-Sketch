@@ -1,5 +1,16 @@
 //Create the 16 x 16 grid
 createGrid();
+
+//Add event listener to add the hover effect
+const cells = document.querySelectorAll('.grid-cell');
+cells.forEach(cell => {
+    cell.addEventListener('mouseover', () => {
+        cell.classList.add('hover');
+    });
+});
+
+// Functions
+
 function createGrid() {
     const container = document.querySelector('#grid-container');
     //Create the 16 rows
